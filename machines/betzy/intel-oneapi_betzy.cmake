@@ -10,7 +10,7 @@ if(DEFINED ENV{PIO})
   set(PIO_INCDIR "$ENV{PIO}/include")
 endif()
 
-string(REPLACE "-mkl=cluster" "" SLIBS "${SLIBS}")
+#string(REPLACE "-mkl=cluster" "" SLIBS "${SLIBS}")
 string(APPEND CPPDEFS " -DHAVE_GETTID")
 
 if (COMP_WAV STREQUAL ww3)
