@@ -1,8 +1,8 @@
 <machine MACH="betzy">
   <DESC> BullSequana XH2000 AMD® Epyc™ "Rome" 2.2GHz, 128-way nodes, os is Linux, batch system is SLURM</DESC>
   <OS>LINUX</OS>
-  <COMPILERS>intel</COMPILERS>
-  <MPILIBS>openmpi,impi</MPILIBS>
+  <COMPILERS>intel,gnu</COMPILERS>
+  <MPILIBS>openmpi</MPILIBS>
   <CIME_OUTPUT_ROOT>/cluster/work/users/$USER/noresm</CIME_OUTPUT_ROOT>
   <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
   <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
@@ -33,10 +33,21 @@
     <modules compiler="intel" mpilib='openmpi'>
       <command name="--force purge"></command>
       <command name="load">StdEnv</command>
-      <command name="use">/cluster/shared/noresm/eb_mods_2023b/modules/all/</command>
+      <command name="use">/cluster/shared/noresm/eb_noresm3/modules/all/</command>
+      <command name="load">git/2.41.0-GCCcore-12.3.0-nodocs</command>
+      <command name="load">ESMF/8.8.0-iomkl-2022a-ParallelIO</command>
+      <command name="load">ParMETIS/4.0.3-iompi-2022a</command>
+      <command name="load">Python/3.11.3-GCCcore-12.3.0</command>
+      <command name="load">CMake/3.26.3-GCCcore-12.3.0</command>
+      <command name="load">XML-LibXML/2.0209-GCCcore-12.3.0</command>
+    </modules>
+    <modules compiler='gnu' mpilib='openmpi'>
+      <command name="--force purge"></command>
+      <command name="load">StdEnv</command>
+      <command name="use">/cluster/shared/noresm/eb_noresm3/modules/all/</command>
       <command name="load">git/2.42.0-GCCcore-13.2.0</command>
-      <command name="load">ESMF/8.6.1-iomkl-2023b-ParallelIO-2.6.3</command>
-      <command name="load">ParMETIS/4.0.3-iompi-2023b</command>
+      <command name="load">ESMF/8.8.0-foss-2023b-ParallelIO-2.6.5</command>
+      <command name="load">ParMETIS/4.0.3-gompi-2023b</command>
       <command name="load">Python/3.11.5-GCCcore-13.2.0</command>
       <command name="load">CMake/3.27.6-GCCcore-13.2.0</command>
       <command name="load">XML-LibXML/2.0210-GCCcore-13.2.0</command>
