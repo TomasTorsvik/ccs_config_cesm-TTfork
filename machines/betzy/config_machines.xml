@@ -1,14 +1,14 @@
 <machine MACH="betzy">
   <DESC> BullSequana XH2000 AMD® Epyc™ "Rome" 2.2GHz, 128-way nodes, os is Linux, batch system is SLURM</DESC>
   <OS>LINUX</OS>
-  <COMPILERS>intel</COMPILERS>
-  <MPILIBS>openmpi,impi</MPILIBS>
+  <COMPILERS>intel,gnu</COMPILERS>
+  <MPILIBS>openmpi</MPILIBS>
   <CIME_OUTPUT_ROOT>/cluster/work/users/$USER/noresm</CIME_OUTPUT_ROOT>
   <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
   <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
   <DOUT_S_ROOT>/cluster/work/users/$USER/archive/$CASE</DOUT_S_ROOT>
   <BASELINE_ROOT> /cluster/shared/noresm/noresm_baselines</BASELINE_ROOT>
-  <CCSM_CPRNC>/cluster/shared/noresm/tools/cprnc-iompi-2023b/bin/cprnc</CCSM_CPRNC>
+  <CCSM_CPRNC>$ENV{CPRNC_PREF}/bin/cprnc</CCSM_CPRNC>
   <GMAKE_J>8</GMAKE_J>
   <BATCH_SYSTEM>slurm</BATCH_SYSTEM>
   <SUPPORTED_BY>noresmCommunity</SUPPORTED_BY>
@@ -33,10 +33,23 @@
     <modules compiler="intel" mpilib='openmpi'>
       <command name="--force purge"></command>
       <command name="load">StdEnv</command>
-      <command name="use">/cluster/shared/noresm/eb_mods_2023b/modules/all/</command>
+      <command name="use">/cluster/shared/noresm/eb_noresm3/modules/all/</command>
+      <command name="load">git/2.41.0-GCCcore-12.3.0-nodocs</command>
+      <command name="load">ESMF/8.8.0-iomkl-2022a-ParallelIO-2.6.5</command>
+      <command name="load">NCO/5.1.9-iomkl-2022a-ESMF-8.8.0</command>
+      <command name="load">ParMETIS/4.0.3-iompi-2022a</command>
+      <command name="load">Python/3.11.3-GCCcore-12.3.0</command>
+      <command name="load">CMake/3.26.3-GCCcore-12.3.0</command>
+      <command name="load">XML-LibXML/2.0209-GCCcore-12.3.0</command>
+    </modules>
+    <modules compiler='gnu' mpilib='openmpi'>
+      <command name="--force purge"></command>
+      <command name="load">StdEnv</command>
+      <command name="use">/cluster/shared/noresm/eb_noresm3/modules/all/</command>
       <command name="load">git/2.42.0-GCCcore-13.2.0</command>
-      <command name="load">ESMF/8.6.1-iomkl-2023b-ParallelIO-2.6.3</command>
-      <command name="load">ParMETIS/4.0.3-iompi-2023b</command>
+      <command name="load">ESMF/8.8.0-foss-2023b-ParallelIO-2.6.5</command>
+      <command name="load">NCO/5.1.9-foss-2023b-ESMF-8.8.0</command>
+      <command name="load">ParMETIS/4.0.3-gompi-2023b</command>
       <command name="load">Python/3.11.5-GCCcore-13.2.0</command>
       <command name="load">CMake/3.27.6-GCCcore-13.2.0</command>
       <command name="load">XML-LibXML/2.0210-GCCcore-13.2.0</command>
@@ -68,6 +81,12 @@
     <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
     <!--env name="OMPI_MCA_fs_lustre_stripe_size">1048576</env-->
     <!--env name="OMPI_MCA_fs_lustre_stripe_width">8</env-->
+  </environment_variables>
+  <environment_variables compiler="intel">
+    <env name="CPRNC_PREF">/cluster/shared/noresm/tools/iomkl22a</env>
+  </environment_variables>
+  <environment_variables compiler="gnu">
+    <env name="CPRNC_PREF">/cluster/shared/noresm/tools/foss23b</env>
   </environment_variables>
   <resource_limits>
     <resource name="RLIMIT_STACK">-1</resource>
