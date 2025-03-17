@@ -86,7 +86,7 @@
     <env name="CPRNC_PREF">/cluster/shared/noresm/tools/iomkl22a</env>
   </environment_variables>
   <environment_variables compiler="gnu">
-    <env name="CPRNC_PREF">/cluster/shared/noresm/tools/foss23b</env>
+    <env name="CPRNC_PREF">/cluster/shared/noresm/tools/foss2023b</env>
   </environment_variables>
   <resource_limits>
     <resource name="RLIMIT_STACK">-1</resource>
