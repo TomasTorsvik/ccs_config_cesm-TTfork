@@ -21,7 +21,7 @@
     <protocol>wget</protocol>
     <address>https://ftp.cgd.ucar.edu/cesm/inputdata/</address>
     <checksum>../inputdata_checksum.dat</checksum>
-  <server>
+  </server>
 
   <server>
     <comment> wget access to subversion </comment>
