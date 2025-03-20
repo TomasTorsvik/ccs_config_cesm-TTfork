@@ -19,7 +19,7 @@
   <directives queue = "preproc">
     <directive> --partition=preproc</directive>
     <directive> --mem-per-cpu=1900M</directive>
-    <directive> --cpus-per-task=4</directive>
+    <directive> --cpus-per-task=1</directive>
   </directives>
     <queues>
       <queue walltimedef="00:59:00" walltimemax="96:00:00" nodemin="4" nodemax="1024" default="true">normal</queue>
