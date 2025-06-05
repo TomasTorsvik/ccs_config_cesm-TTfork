@@ -1,0 +1,89 @@
+#!/bin/bash -e
+
+# Batch system directives
+{{ batchdirectives }}
+#SBATCH  --mem-per-cpu=10000M
+module purge
+module load NCO/5.1.9-iomkl-2022a
+
+ntasks=16
+
+# Set script name
+sn=compress
+
+# zip restart files?
+ZIPRES=0
+
+# remove log files?
+RMLOGS=0
+
+# archieve data
+archivedata=`./xmlquery --value DOUT_S_ROOT`
+
+if [ ! -d $archivedata ]; then
+  echo "${sn}: ${archivedata} is not a directory." >&2
+  exit 1
+fi
+cd $archivedata
+
+complevel=5 # 1-9
+lid="`date +%y%m%d-%H%M%S`"
+
+# Functions
+
+convert_cmd () {
+  echo convert $ncfile
+  rm -f ${ncfile}_tmp
+  set -e
+  ncks --no_abc -h -O -4 -L $complevel $ncfile ${ncfile}_tmp
+  mv ${ncfile}_tmp ${ncfile}
+  chmod go+r ${ncfile}
+}
+
+
+compress_cmd () {
+  if [ $ZIPRES -eq 1 ] ; then
+    echo zip $ncfile
+    gzip $ncfile
+    chmod go+r ${ncfile}.gz
+  fi
+}
+
+
+convert_loop () {
+  set -e
+  # loop over cases 
+  for ncfile in `find . -wholename '*/hist/*.nc' -print`; do
+    if [[ "`ncdump -k $ncfile`" != 'netCDF-4' && "`ncdump -k $ncfile`" != 'netCDF-4 classic model' ]] ; then
+      while :; do
+        if [ `jobs -p|wc -l` -lt $ntasks ]; then
+          convert_cmd &
+          break
+        fi
+        sleep 0.1s
+      done
+    fi
+  done
+#  for ncfile in `find . -wholename '*/rest/*.nc' -print`; do
+#      while :; do
+#        if [ `jobs -p|wc -l` -lt $ntasks ]; then
+#          compress_cmd &
+#          break
+#        fi
+#        sleep 0.1s
+#      done
+#  done
+  for logfile in `find . -wholename '*/logs/*' -print`; do
+      if [ $RMLOGS -eq 1 ] ; then
+        rm -f $logfile
+      fi
+  done
+
+  wait
+  echo "${sn}: conversion completed."
+}
+
+# Execute the convert loop as a backgroud process
+echo `date` > $archivedata/archive.log.$lid
+convert_loop >> $archivedata/archive.log.$lid
+echo `date` >> $archivedata/archive.log.$lid
