@@ -47,6 +47,10 @@
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/gridmaps/r05/map_r05_to_gx3v7_nnsm_e1000r500_180430.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/gridmaps/r05/map_r05_to_gx3v7_nnsm_e1000r500_180430.nc</map>
     </gridmap>
+    <gridmap rof_grid="r05" ocn_grid="tnx2v1" >
+      <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_r05_to_tnx2v1_e1000r300_130206.nc</map>
+      <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_r05_to_tnx2v1_e1000r300_130206.nc</map>
+    </gridmap>
     <gridmap rof_grid="r05" ocn_grid="tnx1v4" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_r05_to_tnx1v4_e1000r300_170609.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_r05_to_tnx1v4_e1000r300_170609.nc</map>
