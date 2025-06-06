@@ -32,6 +32,10 @@
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_rx1_to_tx0.1v3_nnsm_e1000r200_170914.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_rx1_to_tx0.1v3_nnsm_e1000r200_170914.nc</map>
     </gridmap>
+    <gridmap rof_grid="rx1" ocn_grid="tnx2v1" >
+      <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_rx1_to_tnx2v1_e1000r300_130206.nc</map>
+      <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_rx1_to_tnx2v1_e1000r300_130206.nc</map>
+    </gridmap>
     <gridmap rof_grid="rx1" ocn_grid="tnx1v4" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_rx1_to_tnx1v4_e1000r300_170606.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_rx1_to_tnx1v4_e1000r300_170606.nc</map>
@@ -39,6 +43,10 @@
     <gridmap rof_grid="rx1" ocn_grid="tnx0.5v1" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_rx1_to_tnx0.5v1_e300r100_20240702.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_rx1_to_tnx0.5v1_e300r100_20240702.nc</map>
+    </gridmap>
+    <gridmap rof_grid="rx1" ocn_grid="tnx0.25v4" >
+      <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_rx1_to_tnx0.25v4_e300r100_170629.nc</map>
+      <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_rx1_to_tnx0.25v4_e300r100_170629.nc</map>
     </gridmap>
 
     <!-- r05 river grid -->
@@ -58,6 +66,10 @@
     <gridmap rof_grid="r05" ocn_grid="tnx0.5v1" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_r05_to_tnx0.5v1_e300r100_20240702.nc</map>
       <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_r05_to_tnx0.5v1_e300r100_20240702.nc</map>
+    </gridmap>
+    <gridmap rof_grid="r05" ocn_grid="tnx0.25v4" >
+      <map name="ROF2OCN_LIQ_RMAPNAME">cpl/cpl6/map_r05_to_tnx0.25v4_e300r100_170629.nc</map>
+      <map name="ROF2OCN_ICE_RMAPNAME">cpl/cpl6/map_r05_to_tnx0.25v4_e300r100_170629.nc</map>
     </gridmap>
     <gridmap rof_grid="r05" ocn_grid="tx1v1" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/gridmaps/r05/map_r05_to_tx1v1_e1000r500_161214.nc</map>
