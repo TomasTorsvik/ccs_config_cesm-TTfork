@@ -89,6 +89,7 @@
     </gridmap>
 
     <!-- JRA025 river grid -->
+    <!-- ROF2OCN mapping file missing for rof_grid="JRA025" and ocn_grid="tnx2v1","tnx0.25v4" and "tnx0.125v4" -->
 
     <gridmap rof_grid="JRA025" ocn_grid="tx0.1v2" >
       <map name="ROF2OCN_LIQ_RMAPNAME">cpl/gridmaps/rJRA025/map_JRA025m_to_tx0.1v2_e333r100_170619.nc</map>

@@ -145,6 +145,7 @@
   </model_grid>
 
   <!-- TL319 datm JRA grid -->
+  <!-- ROF2OCN mapping file missing for TL319_tn21, TL319_tn025 and TL319_tn0125 -->
 
   <model_grid alias="TL319_tn21" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
@@ -172,7 +173,7 @@
     <grid name="lnd">TL319</grid>
     <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx0.25v4</grid>
-    <mask>tn0.25v4</mask>
+    <mask>tnx0.25v4</mask>
   </model_grid>
   <model_grid alias="TL319_tn0125" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
