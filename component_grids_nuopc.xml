@@ -503,13 +503,13 @@
     <desc>20-km Greenland grid</desc>
   </domain>
   <domain name="gris4">
-    <nx>416</nx> <ny>704</ny>
-    <mesh>$DIN_LOC_ROOT/share/meshes/greenland_4km_epsg3413_c170414_ESMFmesh_c20190729.nc</mesh>
+    <nx>421</nx> <ny>721</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/greenland_4km_epsg3413_ESMFmesh_c20250303.nc</mesh>
     <desc>4-km Greenland grid, for use with the glissade dycore</desc>
   </domain>
   <domain name="ais8">
-    <nx>704</nx> <ny>576</ny>
-    <mesh>$DIN_LOC_ROOT/share/meshes/antarctica_8km_epsg3031_ESMFmesh_c210621.nc</mesh>
+    <nx>761</nx> <ny>761</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/antarctica_8km_epsg3031_ESMFmesh_c20250303.nc</mesh>
     <desc>8-km Antarctica grid</desc>
   </domain>
 
