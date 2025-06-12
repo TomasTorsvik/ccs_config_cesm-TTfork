@@ -48,6 +48,17 @@
         <walltime>0:20:00</walltime>
       </runtime_parameters>
     </job>
+    <job name="case.compress">
+      <template>template.compress</template>
+      <hidden>false</hidden>
+      <dependency>case.st_archive</dependency>
+      <prereq>$DOUT_S</prereq>
+      <runtime_parameters>
+        <task_count>16</task_count>
+        <tasks_per_node>16</tasks_per_node>
+        <walltime>0:20:00</walltime>
+      </runtime_parameters>
+    </job>
     <job name="case.cupid">
       <template>template.cupid</template>
       <hidden>false</hidden>

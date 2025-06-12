@@ -145,6 +145,7 @@
   </model_grid>
 
   <!-- TL319 datm JRA grid -->
+  <!-- ROF2OCN mapping file missing for TL319_tn21, TL319_tn025 and TL319_tn0125 -->
 
   <model_grid alias="TL319_tn21" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
@@ -172,7 +173,7 @@
     <grid name="lnd">TL319</grid>
     <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx0.25v4</grid>
-    <mask>tn0.25v4</mask>
+    <mask>tnx0.25v4</mask>
   </model_grid>
   <model_grid alias="TL319_tn0125" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
@@ -363,6 +364,7 @@
     <grid name="glc">ais8:gris4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
+
   <model_grid alias="ne30pg3_tn14_gris4" compset="CISM2%GRIS-EVOLVE">
     <grid name="atm">ne30np4.pg3</grid>
     <grid name="lnd">ne30np4.pg3</grid>
@@ -370,13 +372,21 @@
     <grid name="glc">gris4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
+
   <model_grid alias="ne30pg3_tn14_ais8" compset="CISM2%AIS-EVOLVE">
     <grid name="atm">ne30np4.pg3</grid>
     <grid name="lnd">ne30np4.pg3</grid>
     <grid name="ocnice">tnx1v4</grid>
     <grid name="glc">ais8</grid>
     <mask>tnx1v4</mask>
+
+  <model_grid alias="ne30pg3_tn05" compset="BLOM">
+    <grid name="atm">ne30np4.pg3</grid>
+    <grid name="lnd">ne30np4.pg3</grid>
+    <grid name="ocnice">tnx0.5v1</grid>
+    <mask>tnx0.5v1</mask>
   </model_grid>
+    
   <model_grid alias="ne30_ne30_mg17" not_compset="BLOM">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
