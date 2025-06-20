@@ -19,7 +19,7 @@
     <grid name="rof"       compset="XROF"        >r05</grid>
 
     <grid name="glc"       compset="CISM2"       >gris4</grid>
-    <grid name="glc"       compset="DGLC"        >gris4</grid>
+    <grid name="glc"       compset="DGLC"        >gris4d</grid>
     <grid name="glc"       compset="XGLC"        >gris4</grid>
 
     <grid name="wav"       compset="WW3"         >wtnx1v4</grid>
@@ -388,7 +388,7 @@
     <grid name="ocnice">tnx0.5v1</grid>
     <mask>tnx0.5v1</mask>
   </model_grid>
-    
+
   <model_grid alias="ne30_ne30_mg17" not_compset="BLOM">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>

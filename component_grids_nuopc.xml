@@ -514,6 +514,21 @@
   </domain>
 
   <!-- ======================================================== -->
+  <!-- DGLC domains -->
+  <!-- ======================================================== -->
+
+  <domain name="gris4d">
+    <nx>416</nx> <ny>704</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/greenland_4km_epsg3413_c170414_ESMFmesh_c20190729.nc</mesh>
+    <desc>4-km Greenland grid, for use with DGLC</desc>
+  </domain>
+  <domain name="ais8d">
+    <nx>704</nx> <ny>576</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/antarctica_8km_epsg3031_ESMFmesh_c210621.nc</mesh>
+    <desc>8-km Antarctica grid for use with DGLC</desc>
+  </domain>
+
+  <!-- ======================================================== -->
   <!-- WW3 domains-->
   <!-- ======================================================== -->
 
