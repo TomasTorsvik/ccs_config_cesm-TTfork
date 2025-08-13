@@ -432,11 +432,18 @@
 
   <!--  spectral element grids with 3x3 FVM physics grid -->
 
-  <model_grid alias="ne5pg3_ne5pg3_mg37" not_compset="BLOM">
+  <model_grid alias="ne3pg3_ne3pg3_mtn14" not_compset="BLOM">
+    <grid name="atm">ne3np4.pg3</grid>
+    <grid name="lnd">ne3np4.pg3</grid>
+    <grid name="ocnice">ne3np4.pg3</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
+  <model_grid alias="ne5pg3_ne5pg3_mtn14" not_compset="BLOM">
     <grid name="atm">ne5np4.pg3</grid>
     <grid name="lnd">ne5np4.pg3</grid>
     <grid name="ocnice">ne5np4.pg3</grid>
-    <mask>gx3v7</mask>
+    <mask>tnx1v4</mask>
   </model_grid>
 
   <model_grid alias="ne16pg3_ne16pg3_mtn14" not_compset="BLOM">
