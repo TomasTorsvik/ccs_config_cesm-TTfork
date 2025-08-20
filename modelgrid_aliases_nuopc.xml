@@ -320,6 +320,22 @@
     <grid name="ocnice">ne3np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
+
+  <model_grid alias="ne3pg3_tn14">
+    <grid name="atm">ne3np4.pg3</grid>
+    <grid name="lnd">ne3np4.pg3</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
+  <model_grid alias="ne3pg3_tn21">
+    <grid name="atm">ne3np4.pg3</grid>
+    <grid name="lnd">ne3np4.pg3</grid>
+    <grid name="ocnice">tnx2v1</grid>
+    <mask>tnx2v1</mask>
+  </model_grid>
+
+
   <model_grid alias="ne5_ne5_mg37" not_compset="_BLOM">
     <grid name="atm">ne5np4</grid>
     <grid name="lnd">ne5np4</grid>
